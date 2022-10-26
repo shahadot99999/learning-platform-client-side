@@ -67,9 +67,7 @@ const Header = () => {
                             </Image>
                             : <FaUser></FaUser>
                         }
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
+
 
                     </Nav>
                     <div className='d-lg-none'>

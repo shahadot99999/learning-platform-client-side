@@ -1,3 +1,16 @@
+# my reposotory name
+KlA Education
+
+# my website name 
+KLA Education
+
+# my website live link
+
+# my website bullet point
+It is a educational website. It focus online learning news. I create sidebar and focus edcucation sites. I also focus content details. It see details all information. I also create navbar. Every navbar are contain blog, fag, login, logout, register etc. I can also apply html, css, javascript, bootstrap, react etc. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

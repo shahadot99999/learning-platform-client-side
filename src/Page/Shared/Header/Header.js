@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import SideNav from '../SideNav/SideNav';
 import Button from 'react-bootstrap/Button';
+import logo from '../../../Image/favicon.ico';
 
 
 const Header = () => {
@@ -22,7 +23,8 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand><Link to='/'>KLA OnLine Learning</Link> </Navbar.Brand>
+                <Navbar.Brand><Link to='/'> <img src={logo} width="30"
+                    height="30" alt="" />KLA OnLine Learning</Link> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

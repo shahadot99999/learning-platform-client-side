@@ -20,8 +20,11 @@ const CoursePages = () => {
                     </Col>
                 </Row>
             </Container>
+
+
             <Footer></Footer>
         </div>
+
     );
 };
 

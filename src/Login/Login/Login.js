@@ -3,11 +3,44 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+// import { auth } from "firebase";
+const auth = getAuth(app);
 
 const Login = () => {
 
     const [error, setError] = useState('');
     const { signIn } = useContext(AuthContext);
+
+
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        // providerLogin(googleProvider)
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleGithubSignIn = () => {
+        // providerLogin(githubProvider)
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.error('error', error)
+            })
+
+    }
+
 
     const navigate = useNavigate();
 
@@ -51,7 +84,16 @@ const Login = () => {
             <Button variant="primary" type="submit">
                 Login
             </Button>
+
+            <div>
+                <ButtonGroup vertical>
+                    <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary" > Log in With Google</Button>
+                    <Button onclick={handleGithubSignIn} variant="outline-dark"> Log in with GitHub</Button>
+                </ButtonGroup>
+            </div>
         </Form>
+
+
     );
 };
 

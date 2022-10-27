@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ContentDetails = ({ educations }) => {
     const { _id, title, image_url, details } = educations;
     return (
-        <Card className=" ">
+        <Card className="mb-5 bg-success ">
 
             <Card.Body>
                 <Card.Title>{title}</Card.Title>

@@ -6,7 +6,7 @@ const Home = () => {
     const allEducations = useLoaderData();
     return (
         <div>
-            <h2>This is home page. {allEducations.length}</h2>
+
             {
                 allEducations.map(educations => <ContentDetails
                     key={educations._id}

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Blog/Blog";
+import Fag from "../../Fag/Fag";
 import CoursePages from "../../layouts/Coursepages";
 import Login from "../../Login/Login/Login";
 import Register from "../../Login/Register/Register";
@@ -19,17 +20,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/educations')
+                loader: () => fetch('https://b610-lerning-platform-server-side-shahadot99999.vercel.app/educations')
             },
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-shahadot99999.vercel.app/category/${params.id}`)
             },
             {
                 path: '/educations/:id',
                 element: <PrivateRoute><Educations></Educations></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/educations/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-shahadot99999.vercel.app/educations/${params.id}`)
             },
             {
                 path: '/login',
@@ -42,6 +43,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/fag',
+                element: <Fag></Fag>
             }
 
 
